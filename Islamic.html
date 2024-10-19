@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Islamic Social Center</title>
+    <style>
+        /* General Styles */
+        body {
+    
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header Section */
+header {
+    background-color: #f8f8f8;
+    padding: 15px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #333;
+    font-weight: bold;
+}
+    /* image Section */
+.image {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image-text h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.hero-text button {
+    background-color: #e94e1b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Welcome Section */
+.welcome {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+}
+
+.welcome h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* The True Religion Section */
+.religion {
+    text-align: center;
+    padding: 50px 20px;
+    background-image: url('quran.jpg');
+    background-size: cover;
+    color: white;
+}
+
+.religion h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f9f9f9;
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    background: #007bdc; /* Dark green color */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin-top: 2rem;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Main Content Section */
+main {
+    margin: 20px auto;
+    max-width: 900px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Qur'an Section */
+.quran {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.quran h2 {
+    font-size: 2rem;
+    color: #007bdc;
+}
+
+.quran p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+.juz-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.juz-list li {
+    margin: 5px;
+}
+
+.juz-list a {
+    display: block;
+    padding: 10px 15px;
+    background: #007bdc;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.juz-list a:hover {
+    background: #007bdc;
+}
+
+/* Islamic Studies Section */
+.resources h2 {
+    font-size: 2rem;
+    color: #007bdc;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.resources ul {
+    list-style: none;
+    text-align: center;
+}
+
+.resources li {
+    margin: 10px 0;
+}
+
+.resources a {
+    font-size: 1.2rem;
+    color: #007bdc;
+    text-decoration: none;
+}
+
+.resources a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styling */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+footer nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer nav a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header, main, footer {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p, .quran p, .resources ul {
+        font-size: 1rem;
+    }
+
+    .juz-list {
+        flex-direction: column;
+    }
+    .juz-list a {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header Section with Navigation -->
+    <header>
+        <header>
+            <nav>
+                <div class="logo">Islamic Social Center</div>
+                <ul>
+                    <li><a href="#about_us">About Us</a></li>
+                    <li><a href="#studies">Studies</a></li>
+                </ul>
+            </nav>
+        </header>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="mosque2.png" alt="Mosque Image">
+        <div class="hero-text">
+            <h1>High quality social services for Muslim community</h1>
+            <p>We provide top-level services to enhance the wellbeing of the Muslim community.</p>
+            <a href="juzuu_1.html"><button>Learn More</button></a>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="welcome">
+        <h2>Welcome!</h2>
+        <p class=" Ass details">We warmly welcome you to our website, dedicated to sharing knowledge about Islam.
+            <br> Whether you're a Muslim seeking to 
+            deepen your faith or a visitor curious to learn more about the Islamic religion,
+            <br> we are delighted to have you here.</p>
+    </section>
+
+    <!-- The True Religion Section -->
+    <section class="image">
+        <img src="qur-an.jpg" alt="Qur'an">
+        <div class="image-text">
+            <h2>The True Religion</h2>
+            <p>We warmly welcome you to our website, dedicated to sharing knowledge about Islam.</p>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <div class="studies">
+        <!-- Studies Section -->
+        <header>
+            <h1>Islamic Resources</h1>
+            <p>Explore a variety of Islamic materials including the Qur'an, Fiqh, Seerah, and more. Deepen your understanding of Islam with these resources.</p>
+        </header>
+    
+    
+    
+        <!-- Main Content Section -->
+        <main>
+            <!-- Qur'an Section -->
+            <section class="quran">
+                <h2>Qur'an</h2>
+                <p>The complete Qur'an with all 30 Juzuu. Click on any Juzuu to read the corresponding chapters with tafsir.</p>
+                <ul class="juz-list">
+                    <!-- List all 30 Juzuu -->
+                    <li><a href="juzuu_1.html">Qur-an Interpretation and All matters of worships</a></li>
+                    <li><a href="juzuu2.html">Qur-an and Audio</a></li>
+                    
+                    <!-- Add more Juzuu links up to 30 -->
+                   
+                </ul>
+            </section>
+            <div class="juzuu 1">
+    
+            </div>
+    
+            <section class="resources">
+                <h2>Islamic Studies</h2>
+                <ul>
+                    <li><a href="https://www.learnislam.com/fiqh" target="_blank">Fiqh (Islamic Jurisprudence)</a></li>
+                    <li><a href="https://www.prophetmuhammad.com/seerah" target="_blank">Seerah (Prophet's Biography)</a></li>
+                    <li><a  href="https://www.tawheedfirst.com" target="_blank">Tawheed (Monotheism)</a></li> 
+            </section>
+                </ul>
+        </main>
+    
+    
+        </div>
+       
+        <script>
+            // You can add interactive features later if needed.
+    // For example, you might add a scroll-to-top button or a gallery slider.
+        </script>
+    
+        <script src="script.js"></script>
+    </body>
+    </html>
+     

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Religion Project</title>
+    
+    <link rel="stylesheet" href="cssp.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(rel.jpg); /* Replace with your background image */
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        #sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: -250px;
+            background-color: rgba(0, 0, 0, 0.8); /* Darker background for sidebar */
+            padding-top: 60px;
+            transition: 0.3s;
+        }
+
+        #sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #ffffff; /* White color for links */
+            display: block;
+            transition: 0.3s;
+        }
+
+        #sidebar a:hover {
+            color: #f1f1f1;
+            background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
+        }
+
+        #main {
+            transition: margin-left .3s;
+            padding: 16px;
+            margin-left: 250px; /* Offset for the sidebar */
+            flex: 1; /* Allow main content to grow */
+        }
+
+        #openBtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #111;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+       
+    </style>
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var main = document.getElementById("main");
+            if (sidebar.style.left === "0px") {
+                sidebar.style.left = "-250px";
+                main.style.marginLeft = "0";
+            } else {
+                sidebar.style.left = "0";
+                main.style.marginLeft = "250px";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div id="sidebar">
+        <a href="login.html">login</a>
+        <a href="home0.html">Home</a>
+        <a href="Islamic.html">Islamic</a>
+        <a href="christianity.html">Christian</a>
+        <a href="layout.html">Layout</a>
+    </div>
+
+    <div id="main">
+        <button id="openBtn" onclick="toggleSidebar()">&#9776;</button>
+        <main>
+        <header>
+            <h1>KNOW YOUR RELIGION</h1>
+            <p>Welcome to the platform where you can learn and explore more about your religion.</p>
+        </header>
+
+       
+            <section class="intro card">
+                <h2>About This Platform</h2>
+                <p>This platform provides insights, articles, and resources to help you deepen your understanding of your faith and beliefs.</p>
+            </section>
+            <section class="intro card">
+                <h2>Explore Different Religions</h2>
+                <p>Learn about various religions and their teachings to foster understanding and respect.</p>
+            </section>
+            <section class="intro card">
+                <h2>Connect with Community</h2>
+                <p>Join discussions and connect with like-minded individuals who share your interests.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Know Your Religion. All rights reserved.</p>
+        
+        </footer>
+    </div>
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var main = document.getElementById("main");
+            if (sidebar.style.left === "0px") {
+                sidebar.style.left = "-250px";
+                main.style.marginLeft = "0";
+            } else {
+                sidebar.style.left = "0";
+                main.style.marginLeft = "250px";
+            }
+        }
+    </script>
+
+    <script src="javap.js"></script>
+</body>
+</html>

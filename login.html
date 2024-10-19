@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #072ea3cf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+            display: none; /* Hide both forms initially */
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, button {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .social-login {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .social-login button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+
+        .google {
+            background-color: #db4437;
+        }
+
+        .apple {
+            background-color: #000;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .forgot-password {
+            text-align: right;
+            font-size: 12px;
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        p {
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* New styles for the home link */
+        .home-link {
+            position: absolute; /* Positioning it absolutely */
+            top: 20px; /* Adjust as needed */
+            right: 20px; /* Adjust as needed */
+            background-color: white; /* Background for better visibility */
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(49, 10, 154, 0.877);
+            padding: 10px;
+        }
+
+        .home-link a {
+            color: #007bff;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .home-link a:hover {
+            color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container" id="login-container">
+            <h2>Login</h2>
+            <form onsubmit="redirectToHome(); return false;"> <!-- Prevent default form submission -->
+                <input type="text" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <span class="forgot-password" onclick="forgotPassword()">Forgot Password?</span>
+                <button type="submit">Login</button>
+            </form>
+            <div class="social-login">
+                <button class="google">G</button>
+                <button class="apple">A</button>
+            </div>
+            <p>Not a member? <a href="#" class="toggle-form" data-form="signup">Register now</a></p>
+        </div>
+        
+        <div class="form-container" id="signup-container">
+            <h2>SIGN UP</h2>
+            <form id="signup-form">
+                <input type="text" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" class="toggle-form" data-form="login">Login here</a></p>
+        </div>
+    </div>
+    
+    <div class="home-link">
+        <a href="home0.html">home</a>
+        <i class="fas fa-home"></i>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get form containers
+            const loginContainer = document.getElementById('login-container');
+            const signupContainer = document.getElementById('signup-container');
+
+            // Show Login form by default
+            loginContainer.style.display = 'block';
+
+            // Add event listeners for toggle links
+            const toggleLinks = document.querySelectorAll('.toggle-form');
+            toggleLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent default link behavior
+
+                    // Determine which form to show
+                    const targetForm = event.target.dataset.form;
+
+                    if (targetForm === 'login') {
+                        signupContainer.style.display = 'none';
+                        loginContainer.style.display = 'block';
+                    } else {
+                        loginContainer.style.display = 'none';
+                        signupContainer.style.display = 'block';
+                    }
+                });
+            });
+        });
+
+        function redirectToHome() {
+            // Redirect to home page
+            window.location.href = 'home0.html'; // Change this to your actual home page URL
+        }
+
+        function forgotPassword() {
+            // Prompt for email or redirect to password recovery page
+            const email = prompt("Please enter your email address for password recovery:");
+            if (email) {
+                // Here you could add your logic to send a recovery email or redirect
+                alert(`A password recovery link has been sent to ${email}`);
+                // You can also redirect to a password recovery page if you have one
+                // window.location.href = 'password_recovery.html'; // Uncomment this line if you have a page
+            }
+        }
+    </script>
+</body>
+</html>
